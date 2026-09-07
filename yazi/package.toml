@@ -1,0 +1,34 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "4dc7f1b"
+hash = "5bb0bfab901d3601c370eafdd66edd31"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "4dc7f1b"
+hash = "f281261ff04ad7ec867c3f802a50835f"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-paste"
+rev = "4dc7f1b"
+hash = "5be02722d97561b6f7aec22429aa00be"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mime-ext"
+rev = "4dc7f1b"
+hash = "3bcc00df11efc3ae5d15f2dba860be7"
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "bd3eaa5"
+hash = "92b5c58159a51c567f82b618cee2b78"
+
+[[plugin.deps]]
+use = "gesellkammer/audio-preview"
+rev = "c95e4f6"
+hash = "94334f36009e7e1635de43c98c6502c5"
+
+[[flavor.deps]]
+use = "kalidyasin/yazi-flavors:tokyonight-night"
+rev = "bfd1b37"
+hash = "f9d70de81ed3b4ed309411f65b7c6f25"

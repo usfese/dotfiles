@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin archive-menu"
+desc = "归档操作菜单（压缩/解压）"

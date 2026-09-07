@@ -1,0 +1,21 @@
+stores:
+    aria2:
+        target: ~/.config/aria2
+    fcitx5:
+        target: ~/.config/fcitx5
+    fish:
+        target: ~/.config/fish
+    kitty:
+        target: ~/.config/kitty
+    matugen:
+        target: ~/.config/matugen
+    mpv:
+        target: ~/.config/mpv
+    niri:
+        target: ~/.config/niri
+    nvim:
+        target: ~/.config/nvim
+    waybar:
+        target: ~/.config/waybar
+    yazi:
+        target: ~/.config/yazi

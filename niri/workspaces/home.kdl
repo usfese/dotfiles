@@ -1,0 +1,26 @@
+// === 启动程序（带延迟，避免同时打开乱序）===
+spawn-at-startup "~/.config/niri/scripts/niri-rice-start"  
+
+workspace "home"  // 你的主 workspace
+
+window-rule {
+    match app-id="sigye-term" at-startup=true
+    open-on-workspace "home"
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.32; }
+}
+
+window-rule {
+    match app-id="pipes-term" at-startup=true
+    open-on-workspace "home"
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.3; }
+}
+
+// f-term (fastfetch) 信息卡片 - 不显示光标的纯输出定格窗口
+window-rule {
+    match app-id="f-term"
+    default-column-width { proportion 0.35; }
+    default-window-height { proportion 0.5; }
+}
+

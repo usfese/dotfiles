@@ -1,0 +1,32 @@
+#!/bin/sh
+
+export http_proxy=http://127.0.0.1:7890
+export https_proxy=http://127.0.0.1:7890
+
+# 1. 启动 sigye（左上）
+kitty --class sigye-term -e sigye &
+sleep 0.2
+
+# 2. 启动 fastfetch（左下）
+kitty --class f-term -e fish -c 'fwatch' &
+sleep 0.4
+
+# 3 用 niri msg 把窗口 consume 到当前 column（左边）
+niri msg action consume-or-expel-window-left
+
+# 启动 pipes.sh，然后 consume 到上一个 column（实现上下堆叠）
+kitty --class pipes-term -e sh -c 'pipes.sh; exec $SHELL' &
+sleep 0.7
+
+# 等待网络和代理就绪，否则musicfox无法登录
+# while ! ss -tln | grep -q ':7890 '; do sleep 0.2; done
+
+kitty --class musicfox-term -e musicfox &
+sleep 0.4
+niri msg action consume-or-expel-window-left
+
+kitty --class aerc-term -e aerc &
+sleep 0.4
+
+# 聚焦首个窗口
+niri msg action focus-window --id 2
