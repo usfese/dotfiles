@@ -252,16 +252,16 @@ local function extract_files(files, cwd, mode)
 
 		local dest = output_dir or cwd
 
-		-- 选择工具
+		-- 选择工具（优先格式专用工具）
 		local cmd
 		if is_cmd_available("tar") and file:match("%.tar") then
 			cmd = "tar"
-		elseif find_cmd({ "7z", "7zz", "7za" }) then
-			cmd = find_cmd({ "7z", "7zz", "7za" })
-		elseif is_cmd_available("unzip") and file:match("%.zip$") then
-			cmd = "unzip"
 		elseif is_cmd_available("unrar") and file:match("%.rar$") then
 			cmd = "unrar"
+		elseif is_cmd_available("unzip") and file:match("%.zip$") then
+			cmd = "unzip"
+		elseif find_cmd({ "7z", "7zz", "7za" }) then
+			cmd = find_cmd({ "7z", "7zz", "7za" })
 		else
 			notify("未找到解压工具", "error")
 			return
@@ -297,6 +297,14 @@ local function extract_files(files, cwd, mode)
 
 			-- 第二次尝试：带密码
 			ok = run_extract(cmd, build_extract_args(cmd, file, dest, password), cwd)
+
+			-- 如果格式专用工具失败，回退到 7z 再试
+			if not ok and cmd ~= "7z" and cmd ~= "7zz" and cmd ~= "7za" then
+				local z7 = find_cmd({ "7z", "7zz", "7za" })
+				if z7 then
+					ok = run_extract(z7, build_extract_args(z7, file, dest, password), cwd)
+				end
+			end
 
 			if not ok then
 				notify("解压失败（密码错误或文件损坏）", "error")

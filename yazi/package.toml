@@ -28,6 +28,21 @@ use = "gesellkammer/audio-preview"
 rev = "c95e4f6"
 hash = "94334f36009e7e1635de43c98c6502c5"
 
+[[plugin.deps]]
+use = "llanosrocas/githead"
+rev = "317d09f"
+hash = "41dc37a724b2afd21da4f1ea6c1182d8"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "e73fd74"
+hash = "6ea5f37c7f219671ec504cb8311f889d"
+
+[[plugin.deps]]
+use = "walldmtd/fs-usage"
+rev = "1b42083"
+hash = "28ac3655541321f006c25463419d719a"
+
 [[flavor.deps]]
 use = "kalidyasin/yazi-flavors:tokyonight-night"
 rev = "bfd1b37"

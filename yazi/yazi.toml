@@ -28,3 +28,9 @@ url = "remote://*"
 run = "mime-ext.remote"
 prio = "high"
 group = "mime"
+
+[[plugin.prepend_fetchers]]
+id = "ffmpeg_stats"
+url = "*"              # Note that url (not name) is needed for the new version of yazi
+run = "ffmpeg-stats"
+group = "ffmpeg_stats"

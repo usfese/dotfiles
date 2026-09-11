@@ -7,3 +7,65 @@ desc = "归档操作菜单（压缩/解压）"
 on = "p"
 run = "plugin smart-paste"
 desc = "Paste into the hovered directory or CWD"
+
+[[mgr.prepend_keymap]]
+on = ["g", "i"]
+run = "plugin lazygit"
+desc = "run lazygit"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "d"]
+run = "plugin ffmpeg-stats -- toggle-duration"
+desc = "Toggle duration"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "r"]
+run = "plugin ffmpeg-stats -- toggle-resolution"
+desc = "Toggle resolution"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "c"]
+run = "plugin ffmpeg-stats -- toggle-codec"
+desc = "Toggle codec"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "f"]
+run = "plugin ffmpeg-stats -- toggle-fps"
+desc = "Toggle FPS"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "b"]
+run = "plugin ffmpeg-stats -- toggle-bitrate"
+desc = "Toggle bitrate"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "a"]
+run = "plugin ffmpeg-stats -- toggle-audio-codec"
+desc = "Toggle audio codec"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "h"]
+run = "plugin ffmpeg-stats -- toggle-audio-channels"
+desc = "Toggle audio channels"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "o"]
+run = "plugin ffmpeg-stats -- toggle-format"
+desc = "Toggle format"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "s"]
+run = "plugin ffmpeg-stats -- toggle-aspect"
+desc = "Toggle aspect ratio"
+
+# Bulk toggle operations
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "A"]
+run = "plugin ffmpeg-stats -- toggle-all"
+desc = "Toggle all stats"
+
+[[mgr.prepend_keymap]]
+on = ["m", "f", "D"]
+run = "plugin ffmpeg-stats -- disable-all"
+desc = "Disable all stats"

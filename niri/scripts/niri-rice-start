@@ -8,7 +8,7 @@ kitty --class sigye-term -e sigye &
 sleep 0.2
 
 # 2. 启动 fastfetch（左下）
-kitty --class f-term -e fish -c 'fwatch' &
+kitty --class f-term -e fish -c 'sleep 0.5; clear; fastfetch --logo-type small; sleep infinity' &
 sleep 0.4
 
 # 3 用 niri msg 把窗口 consume 到当前 column（左边）
