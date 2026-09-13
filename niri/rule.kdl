@@ -257,4 +257,7 @@ window-rule {
     default-column-width { proportion 0.5; }
 }
 
-
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}
