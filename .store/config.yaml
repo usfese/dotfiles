@@ -13,6 +13,8 @@ stores:
         target: ~/.config/mpv
     niri:
         target: ~/.config/niri
+    noctalia:
+        target: ~/.config/noctalia/
     nvim:
         target: ~/.config/nvim
     waybar:
