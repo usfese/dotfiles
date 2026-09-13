@@ -1,0 +1,158 @@
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    background_opacity = 0.70999998413026333
+    border = "surface"
+    center = [ "audio_visualizer", "group:g5", "spacer_1", "media" ]
+    end = [ "tray", "spacer_1", "group:g2", "group:g1", "group:g3" ]
+    font_weight = 400
+    margin_edge = 2
+    margin_ends = 5
+    padding = 38
+    radius = 80
+    start = [ "wallpaper", "spacer_1", "workspaces", "spacer_1", "group:g4", "spacer_1", "active_window" ]
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "brightness", "volume" ]
+        opacity = 1.0
+        padding = 6.0
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g2"
+        members = [ "bluetooth", "network" ]
+        opacity = 1.0
+        padding = 6.0
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g3"
+        members = [ "battery", "session" ]
+        opacity = 1.0
+        padding = 6.0
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g4"
+        members = [ "cpu", "ram" ]
+        opacity = 1.0
+        padding = 6.0
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g5"
+        members = [ "clock", "date" ]
+        opacity = 1.0
+        padding = 6.0
+
+[hooks]
+started = "noctalia msg wallpaper-random"
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 854.0
+    cy = 885.0
+    output = "eDP-1"
+    placement_height = 1067.0
+    placement_width = 1707.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[shell]
+font_family = "Noto Sans Mono Medium"
+
+    [shell.panel]
+    transparency_mode = "glass"
+
+[theme]
+builtin = "Noctalia"
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-rainbow"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "kitty", "niri", "qt" ]
+    community_ids = [ "opencode", "zed", "steam", "fcitx5", "glow", "lazygit" ]
+
+[wallpaper]
+directory = "/home/usfese/Pictures/Wallpapers"
+
+    [wallpaper.default]
+    path = "/home/usfese/Pictures/Wallpapers/wall_1781768189.jpg"
+
+    [wallpaper.last]
+    path = "/home/usfese/Pictures/Wallpapers/wall_1781768189.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/usfese/Pictures/Wallpapers/wall_1781768189.jpg"
+
+[widget.active_window]
+max_length = 88
+title_scroll = "always"
+
+[widget.audio_visualizer]
+width = 114
+
+[widget.clock]
+anchor = true
+
+[widget.media]
+album_art_only = true
+art_size = 30
+hide_when_no_media = true
+
+[widget.session]
+capsule = true
+capsule_fill = "on_secondary"
+
+[widget.spacer_1]
+type = "spacer"
