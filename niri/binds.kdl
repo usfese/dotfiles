@@ -43,7 +43,7 @@ binds {
     // 警告：这是实验性功能
     // 切换 移动聚焦窗口至侧边栏 （建议配合切换浮动聚焦的快捷键使用，我设置的是super+n）
     Mod+Alt+S hotkey-overlay-title="收起窗口 Move to Sidebar" { spawn "niri-sidebar" "toggle-window"; }
-    Mod+M hotkey-overlay-title="收起窗口 Move to Sidebar" { spawn "niri-sidebar" "toggle-window"; }
+    Mod+M hotkey-overlay-title="打开媒体面板" { spawn "noctalia" "msg" "panel-toggle" "control-center" "media"; }
     // 切换 收起/展开侧边栏
     Mod+Alt+Z hotkey-overlay-title="展开/收起侧边栏 Toggle Sidebar" { spawn "niri-sidebar" "toggle-visibility";}
     // 反向排序侧边栏
@@ -74,7 +74,8 @@ binds {
     Mod+P hotkey-overlay-title="提取窗口信息 Pick information" { spawn "~/.config/niri/scripts/niri-pick" "focus"; }
     //Mod+Alt+V  hotkey-overlay-title="剪贴板 Clipboard" {spawn-sh "copyq toggle || ~/.local/bin/clipse-gui || kitty --class clipse --single-instance -e clipse";}
     // 这是我自己的剪贴板程序，对应aur包cliphist-tui-git
-    Mod+Alt+V hotkey-overlay-title="剪贴板 Clipboard" {spawn-sh "kitty --single-instance --class cliphist-tui -e cliphist-tui";} // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
+    // Mod+Alt+V hotkey-overlay-title="剪贴板 Clipboard" {spawn-sh "kitty --single-instance --class cliphist-tui -e cliphist-tui";} // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
+    Mod+Alt+V hotkey-overlay-title="剪贴板 Clipboard" { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
@@ -128,8 +129,8 @@ binds {
     Mod+Right { focus-column-right; }
     // super+vim key
     Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
+    Mod+J     { focus-workspace-down; }
+    Mod+K     { focus-workspace-up; }
     Mod+L     { focus-column-right; }
 
     // 移动colume（列）
@@ -213,8 +214,8 @@ binds {
     // 上下切换工作区
     Mod+Page_Down hotkey-overlay-title=null     { focus-workspace-down; }
     Mod+Page_Up hotkey-overlay-title=null       { focus-workspace-up; }
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
+    Mod+U              { focus-window-down; }
+    Mod+I              { focus-window-up; }
     // 上下移动窗口到其他工作区
     Mod+Ctrl+Page_Down hotkey-overlay-title=null { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up hotkey-overlay-title=null  { move-column-to-workspace-up; }
@@ -300,8 +301,8 @@ binds {
     // If the window is already in a column, they will expel it out.
 
     // mod+左右方括号 移动窗口（不是移动colume，是允许移动到另一个colume的窗口移动）
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
+    // Mod+BracketLeft  { consume-or-expel-window-left; }
+    // Mod+BracketRight { consume-or-expel-window-right; }
     // mod+A/D 同效果
     Mod+A hotkey-overlay-title="向左移动窗口 Move window to left between columes" { consume-or-expel-window-left; }
     Mod+D hotkey-overlay-title="向右移动窗口 Move window to right between columes" { consume-or-expel-window-right; }
@@ -373,7 +374,7 @@ binds {
     Mod+V   hotkey-overlay-title="切换浮动 Toggle floating"    { toggle-window-floating; }
     // 在浮动模式和非浮动模式之间切换聚焦
     Mod+Shift+V hotkey-overlay-title=null { switch-focus-between-floating-and-tiling; }
-    Mod+N hotkey-overlay-title="切换浮动聚焦 Change focus to floating" { switch-focus-between-floating-and-tiling; }
+    Mod+N hotkey-overlay-title="打开Neovim最近项目" { spawn "noctalia" "msg" "panel-toggle" "launcher" "/nvim"; }
     Alt+grave hotkey-overlay-title=null { switch-focus-between-floating-and-tiling; }
 
     Mod+Alt+N hotkey-overlay-title=null { switch-focus-between-floating-and-tiling; }
@@ -418,8 +419,13 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
 
     // moving the mouse or pressing any other key.
-    Mod+Shift+P  hotkey-overlay-title="电源菜单 powermenu" { spawn "~/.config/niri/scripts/powermenu"; }
+    Mod+Shift+P  hotkey-overlay-title="电源菜单 powermenu" { spawn "noctalia" "msg" "panel-toggle" "session"; }
 
     // 录制开关
     Alt+Shift+S  { spawn "obs-cmd" "-w" "obsws://localhost:4455/AZ9udMAQm9x6VuyC" "recording" "toggle"; }
+
+    // 媒体控制
+    Mod+Space hotkey-overlay-title="暂停/继续播放媒体" { spawn "noctalia" "msg" "media" "toggle"; }
+    Mod+BracketLeft hotkey-overlay-title="上一首" { spawn "noctalia" "msg" "media" "previous"; }
+    Mod+BracketRight hotkey-overlay-title="下一首" { spawn "noctalia" "msg" "media" "next"; }
 }

@@ -137,7 +137,7 @@ fi
 
 # --- 3. 应用模块 ---
 
-noctalia msg wallpaper set "$FINAL_PATH"
+noctalia msg wallpaper-set "$FINAL_PATH"
 
 # --- 4. 钩子与清理 ---
 (
