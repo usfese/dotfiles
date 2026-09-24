@@ -3,9 +3,11 @@
 export http_proxy=http://127.0.0.1:7890
 export https_proxy=http://127.0.0.1:7890
 
+sleep 0.7
+
 # 1. 启动 sigye（左上）
 kitty --class sigye-term -e sigye &
-sleep 0.2
+sleep 0.4
 
 # 2. 启动 fastfetch（左下）
 kitty --class f-term -e fish -c 'sleep 0.5; clear; fastfetch --logo-type small; sleep infinity' &
@@ -16,7 +18,7 @@ niri msg action consume-or-expel-window-left
 
 # 启动 pipes.sh，然后 consume 到上一个 column（实现上下堆叠）
 kitty --class pipes-term -e sh -c 'pipes.sh; exec $SHELL' &
-sleep 0.7
+sleep 0.4
 
 # 等待网络和代理就绪，否则musicfox无法登录
 # while ! ss -tln | grep -q ':7890 '; do sleep 0.2; done

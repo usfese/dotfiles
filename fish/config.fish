@@ -96,3 +96,33 @@ function nvim
     # 3. 退出 nvim 后，再次触发该动作以恢复原样
     niri msg action maximize-column
 end
+
+# 在 Niri 的 165Hz 和 60.002Hz 之间切换
+function niri-refresh --description '在 Niri 的 165Hz 和 60.002Hz 之间切换'
+    set -l output eDP-1
+    set -l current (niri msg outputs | string match -r 'Current mode:')
+
+    if test $status -ne 0
+        echo '无法读取 Niri 当前屏幕状态'
+        return 1
+    end
+
+    if string match -q -r '@165(\.000)? Hz' -- $current
+        set -l mode '2560x1600@60.002'
+        set -l label '60.002 Hz'
+    else if string match -q -r '@60\.002 Hz' -- $current
+        set -l mode '2560x1600@165.000'
+        set -l label '165.000 Hz'
+    else
+        echo "当前刷新率不是 165.000 Hz 或 60.002 Hz：$current"
+        return 1
+    end
+
+    if niri msg output $output mode $mode
+        echo "已切换到 $label"
+        command -q notify-send; and notify-send 'Niri 刷新率' "已切换到 $label"
+    else
+        echo "切换到 $label 失败"
+        return 1
+    end
+end
