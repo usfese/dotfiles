@@ -141,8 +141,8 @@ binds {
     Mod+Ctrl+Right hotkey-overlay-title=null { move-column-right; }
     // super+ctrl+vimkey
     Mod+Ctrl+H     { move-column-left; }
-    Mod+Ctrl+J     { move-window-down; }
-    Mod+Ctrl+K     { move-window-up; }
+    Mod+Ctrl+U     { move-window-down; }
+    Mod+Ctrl+I     { move-window-up; }
     Mod+Ctrl+L     { move-column-right; }
     // super+ctrl+a/d 向左/右移动列
     Mod+Ctrl+A  { move-column-left; }
@@ -219,8 +219,8 @@ binds {
     // 上下移动窗口到其他工作区
     Mod+Ctrl+Page_Down hotkey-overlay-title=null { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up hotkey-overlay-title=null  { move-column-to-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
+    Mod+Ctrl+J         { move-column-to-workspace-down; }
+    Mod+Ctrl+K         { move-column-to-workspace-up; }
 
     // You can bind mouse wheel scroll ticks using the following syntax.
     // These binds will change direction based on the natural-scroll setting.
