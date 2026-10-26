@@ -3,6 +3,16 @@ if status is-interactive
 end
 set fish_greeting ""
 set -p PATH ~/.local/bin ~/.npm-global/bin
+
+# >>> FStudy Android toolchain >>>
+set -gx ANDROID_HOME $HOME/Android/Sdk
+set -gx ANDROID_SDK_ROOT $ANDROID_HOME
+set -gx CHROME_EXECUTABLE /usr/bin/google-chrome-stable
+set -gx PUB_HOSTED_URL https://pub.flutter-io.cn
+set -gx FLUTTER_STORAGE_BASE_URL https://storage.flutter-io.cn
+fish_add_path -g /opt/android-sdk/cmdline-tools/latest/bin $ANDROID_HOME/platform-tools
+# <<< FStudy Android toolchain <<<
+
 starship init fish | source
 zoxide init fish --cmd cd | source
 

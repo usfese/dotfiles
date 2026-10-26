@@ -19,6 +19,9 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
+    keys = {
+      { "s", false },
+    },
     opts = {
       highlight = {
         backdrop = false,

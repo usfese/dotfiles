@@ -24,3 +24,5 @@ vim.api.nvim_set_hl(0, "Cursor", { reverse = true })
 
 vim.o.shell = "fish"
 vim.g.lazyvim_picker = "fzf"
+
+vim.opt.mouse = ""
