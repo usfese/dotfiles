@@ -33,5 +33,3 @@ end, { desc = "Debug: Set Conditional Breakpoint" })
 
 map("n", "<leader>o", "o<Esc>", { desc = "Insert blank line below" })
 map("n", "<leader>O", "O<Esc>", { desc = "Insert blank line above" })
-
-map("i", "jk", "<Esc>", { desc = "Return to Normal Mode" })

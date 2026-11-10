@@ -1,32 +1,32 @@
 layout {
 
     focus-ring {
-        active-color   "#ffb0cb"
+        active-color   "#7ed0ff"
         inactive-color "#131313"
         urgent-color   "#ffb4ab"
     }
 
     border {
-        active-color   "#ffb0cb"
+        active-color   "#7ed0ff"
         inactive-color "#131313"
         urgent-color   "#ffb4ab"
     }
 
 
     tab-indicator {
-        active-color   "#ffb0cb"
-        inactive-color "#7a294c"
+        active-color   "#7ed0ff"
+        inactive-color "#004c6a"
         urgent-color   "#ffb4ab"
     }
 
     insert-hint {
-        color "#ffb0cb80"
+        color "#7ed0ff80"
     }
 }
 
 recent-windows {
     highlight {
-        active-color "#ffb0cb"
+        active-color "#7ed0ff"
         urgent-color "#ffb4ab"
     }
 }
